@@ -1,0 +1,13 @@
+const mongoose=require("mongoose")
+let mongoUri="mongodb+srv://shubham-72:mondob1@cluster0.cieyx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
+let connect=async()=>{
+    try{
+        await mongoose.connect(mongoUri,{ useUnifiedTopology: true , useNewUrlParser: true })
+        console.log("connected")
+    }
+    catch(e){
+        console.log("connecting error in mongodb",e.message)
+    }
+}
+export default{connect}
