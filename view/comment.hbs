@@ -1,4 +1,5 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<link href="/style6.css" rel="stylesheet">
 <nav class="navbar navbar-expand navbar-dark bg-dark">
   <div class="container">
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -21,14 +22,20 @@
 <span>{{error.comment}}</span>
 <button type="submit">SUBMIT</button>
 </form>
-
+<hr>
+<dir class="z">
 {{#each data}}
-name:{{this.name}}
+<label>name:</label>
+<div class="x">{{this.name}}</div>
 <br>
-comment:{{this.comments}}
-<a href="/deletecomment?id={{this.id}}">DELETE</a>
+<label>comment:</label>
+<div class="x">{{this.comments}}</div>
+<div class="d-flex align-items-end flex-column bd-highlight mb-3 y">
+<a class="btn btn-primary" style="margin-top: -20px;" href="/deletecomment?id={{this.id}}">DELETE</a>
+</div>
 <br>
 <hr>
 {{else}}
 <h1>NO COMMENT YET</h1>
+</dir>
 {{/each}}

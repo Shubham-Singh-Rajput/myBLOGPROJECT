@@ -3,7 +3,7 @@ let mongoUri="mongodb+srv://shubham-72:mondob1@cluster0.cieyx.mongodb.net/myFirs
 
 let connect=async()=>{
     try{
-        await mongoose.connect(mongoUri,{ useUnifiedTopology: true , useNewUrlParser: true })
+        await mongoose.connect(mongoUri,{ useUnifiedTopology: true , useNewUrlParser: true ,useFindAndModify: false})
         console.log("connected")
     }
     catch(e){
@@ -11,3 +11,8 @@ let connect=async()=>{
     }
 }
 export default{connect}
+
+
+
+
+// 'mongodb://localhost:27017/blogs'
