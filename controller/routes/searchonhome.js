@@ -11,8 +11,8 @@ let search={
         }
         req.session.UserFind=""
         req.session.cookie.originalMaxAge=0
-        
-        let allBlog=await blog.find({private:"public",Blogtitle:req.body.search}).populate('userID')
+       
+        let allBlog=await blog.find({private:"public",Blogtitle:`${req.body.search}`}).populate('userID')
         return resp.render("search.hbs",{
         data:allBlog
         })
